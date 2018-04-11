@@ -1,0 +1,46 @@
+
+table {
+	/* border: 1px solid blue; */
+
+}
+
+td {
+	width: 100px;
+	height: 100px;
+
+	border-style: solid;
+	border-color: black;
+	/* border: 1px solid red; */
+}
+
+table, td {
+	border-collapse: collapse;
+}
+
+.one {
+	border-width: 0 1px 1px 0;
+}
+
+.two {
+	border-width: 0 0 1px 0;
+}
+.three {
+	border-width: 0 0 1px 1px;
+}
+.four {
+	border-width: 0 1px 0 0;
+}
+.five {
+	border-width: 0 0 0 0;
+}
+.six {
+	border-width: 0 0 0 1px;
+}
+.seven {
+	border-width: 1px 1px 0 0;
+}
+.eight {
+	border-width: 1px 0 0 0;
+}.nine {
+	border-width: 1px 0 0 1px;
+}

@@ -35,8 +35,8 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-hw-10/node_modules/
-*/node_modules
+# hw-10/node_modules/
+*/node_modules/
 
 # TypeScript v1 declaration files
 typings/

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { User, Post } = require('./models/models');
 
 mongoose.connect('mongodb://localhost/dataassociations');
-function createUsers ( ){
+function createUsers() {
 	User.create({
 		name: 'Hermione Granger',
 		email: 'hermione@hogwarts.edu'
@@ -11,13 +11,15 @@ function createUsers ( ){
 // createUsers();
 
 Post.create({
-	title: 'Hermione loves the other dude',
-	content: 'She ain\'t lovin the potter'
+	title: 'Hermione: "I\'m so pretty!"',
+	content: 'She thinks she is pretty'
 }, function (err, post) {
-	console.log(err? 'error, ' : 'no error, ', post ? 'there is post' : 'there is no post');
+	// console.log(err? 'error, ' : 'no error, ', post ? 'there is post' : 'there is no post');
 
 	User.findOne({
 		email: "hermione@hogwarts.edu"
+
+		/* Using named callback. Using closure to pass value. */
 	}, userFoundCB(post));
 });
 
@@ -26,7 +28,7 @@ function userFoundCB(post) {
 		if (err) return console.error(err);
 
 		if (foundUser) {
-			// console.log(foundUser);
+			console.log('found user, pushing to array');
 			foundUser.posts.push(post);
 			foundUser.save((err, data) => {
 				if (err) {
